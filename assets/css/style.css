@@ -631,8 +631,6 @@ details.area .table-wrap { margin: 0; border: 0; border-top: var(--line); border
 .hero h1, .page-head h1 { animation: rise .7s ease both; }
 .hero__sub, .page-head .lead, .hero .author { animation: rise .7s ease .15s both; }
 .hero .btn-row, .hero__hint { animation: rise .7s ease .3s both; }
-.hero__art { animation: rise .9s ease .2s both; }
-.hero__art .map-hero { animation: bob 6s ease-in-out 1s infinite; }
 .avatar { transition: transform .3s ease; }
 .avatar:hover { animation: wiggle .6s ease; }
 .countdown__num b { animation: pop .8s ease both; }
@@ -645,7 +643,35 @@ details.area .table-wrap { margin: 0; border: 0; border-top: var(--line); border
 .logo svg { transition: transform .4s ease; }
 .logo:hover svg { transform: rotate(-8deg) scale(1.08); }
 @media (prefers-reduced-motion: reduce) {
-  .hero h1, .page-head h1, .hero__sub, .page-head .lead, .hero .author, .hero .btn-row, .hero__hint, .hero__art, .hero__art .map-hero, .countdown__num b { animation: none; }
+  .hero h1, .page-head h1, .hero__sub, .page-head .lead, .hero .author, .hero .btn-row, .hero__hint, .countdown__num b { animation: none; }
   .js mark.hl:not(.hl--strong) { background-size: 100% 100%; transition: none; }
   .btn:hover, .photo-frame:hover, .photo-strip .lada-ph:hover, .logo:hover svg { transform: none; }
 }
+
+/* ===== v15: аккуратные размеры на телефонах ===== */
+h1, h2, h3, .lead, .hero__sub { overflow-wrap: break-word; }
+@media (max-width: 640px) {
+  body { font-size: 16px; line-height: 1.6; }
+  h1 { font-size: 25px; hyphens: auto; }
+  h2 { font-size: 21px; hyphens: auto; }
+  h3 { font-size: 17.5px; }
+  h1 .hl { white-space: normal; }
+  .lead, .hero__sub { font-size: 16.5px; }
+  .eyebrow, .note { font-size: 21px; }
+  .hero { padding: 30px 0 28px; }
+  .notice { font-size: 13.5px; }
+  .site-header__inner { gap: 10px; padding: 8px 14px; }
+  .logo { font-size: 15px; gap: 6px; }
+  .logo svg { width: 28px; height: 28px; flex: 0 0 28px; }
+  .menu-toggle { padding: 6px 12px; font-size: 14px; }
+  .btn { font-size: 15px; padding: 12px 18px; }
+  .float-cta .btn { font-size: 14px; padding: 10px 16px; }
+  .countdown h2 { font-size: 20px; }
+  .why__i, .card { padding-inline: 16px; }
+}
+@media (max-width: 380px) {
+  h1 { font-size: 23px; }
+  .logo { font-size: 14px; }
+  .logo svg { display: none; }
+}
+.hl--strong { white-space: nowrap; }
